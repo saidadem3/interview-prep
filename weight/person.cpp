@@ -7,7 +7,7 @@ Person::Person()
     height = 0;
     weight = 0;
 }
-Person::Person(string name, int age, float weight, float height)
+Person::Person(string name, int age, float weight, int height)
 {
     //C needs to know which variable is the one from your arguments and the one that is named in the object
     //if you use the same name use this-> to specify the object's variable
@@ -27,7 +27,7 @@ int Person::get_age()
     return age;
 }
 
-float Person::get_height()
+int Person::get_height()
 {
     return height;
 }
@@ -49,7 +49,12 @@ void Person::set_weight(float weight)
 {
     this->weight = weight;
 }
-void Person::set_height(float height)
+void Person::set_height(int height)
 {
     this->height = height;
+}
+
+float Person::BMI(int height, float weight)
+{
+    return 703 * weight / pow(height, 2.0);
 }
